@@ -1,7 +1,15 @@
 {
   "name": "ripple-ink-well",
   "version": "0.0.1",
-  "description": "Stencil Component Starter",
+  "description": "A ripple effect custom element for all your interactive elements.",
+  "keywords": [
+    "ink-well",
+    "ink well",
+    "ripple",
+    "material",
+    "ripple effect",
+    "material ripple",
+  ],
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "es2015": "dist/esm/index.mjs",
