@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+    />
+    <title>Stencil Component Starter</title>
+
+    <script type="module" src="/build/ink-well.esm.js"></script>
+    <script nomodule src="/build/ink-well.js"></script>
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      button {
+        margin: 1em;
+        border: none;
+        outline: none;
+        display: flex;
+        border-radius: 7px;
+        background: #ccc;
+        align-items: center;
+        padding: 0.7em 1.5em;
+        justify-content: center;
+      }
+
+      svg {
+        width: 25px;
+      }
+    </style>
+  </head>
+  <body>
+    <ink-well>
+      <button>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+          <polygon
+            points="3.828 9 9.899 2.929 8.485 1.515 0 10 .707 10.707 8.485 18.485 9.899 17.071 3.828 11 20 11 20 9 3.828 9"
+          />
+        </svg>
+      </button>
+    </ink-well>
+  </body>
+</html>
