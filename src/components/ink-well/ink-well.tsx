@@ -12,7 +12,7 @@ export class InkWell {
 
   @Element() host: HTMLElement;
 
-  child: Element;
+  child: HTMLElement;
   isAnimating: boolean = false;
   maxChildCount: number = 1;
 
