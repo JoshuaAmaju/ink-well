@@ -7,11 +7,21 @@
 A ripple effect custom element for all your interactive elements.
 
 ```bash
-npm install ink-well
+npm install ripple-inkwell
 ```
 
-To build the component for production, run:
+To install via CDN, include:
+
+```
+<script src="https://unpkg.com/ripple-inkwell@0.0.1/dist/ink-well.js"></script>
+```
 
 ```
 <ink-well><button>click me</button></ink-well>
+```
+
+### You can provide your own color by specifying a color attribute:
+
+```
+<ink-well color"red"><button>click me</button></ink-well>
 ```

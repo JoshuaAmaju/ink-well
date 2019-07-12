@@ -10,9 +10,9 @@ import { Component, h, Element, Prop } from "@stencil/core";
 export class InkWell {
   @Prop() color: string = "rgba(123, 123, 123, 0.52)";
 
-  @Element() host: HTMLElement;
+  @Element() host: Element;
 
-  child: HTMLElement;
+  child: any;
   isAnimating: boolean = false;
   maxChildCount: number = 1;
 

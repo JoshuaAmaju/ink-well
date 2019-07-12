@@ -1,6 +1,6 @@
 {
   "name": "ripple-inkwell",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A ripple effect custom element for all your interactive elements.",
   "keywords": [
     "ink-well",
@@ -8,7 +8,7 @@
     "ripple",
     "material",
     "ripple effect",
-    "material ripple",
+    "material ripple"
   ],
   "main": "dist/index.js",
   "module": "dist/index.mjs",
