@@ -10,6 +10,7 @@
     "ripple effect",
     "material ripple"
   ],
+  "repository": "https://github.com/JoshuaAmaju/ink-well.git",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "es2015": "dist/esm/index.mjs",
