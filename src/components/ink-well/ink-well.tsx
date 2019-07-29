@@ -2,6 +2,7 @@ import { Component, h, Element, Prop } from "@stencil/core";
 
 @Component({
   tag: "ink-well",
+  shadow: true,
   styles: `
     :host {
         display: contents;
@@ -29,15 +30,12 @@ export class InkWell {
 
   clickListener = e => {
     if (this.isAnimating) return;
-    let default_zIndex: string | number = 2;
     const rect = this.getRect(this.child);
-    const diagonal = (rect.width + rect.height) / 2;
-    const top = e.clientY - rect.top - diagonal / 2;
-    const left = e.clientX - rect.left - diagonal / 2;
+    const top = e.clientY - rect.top;
+    const left = e.clientX - rect.left;
+    let default_zIndex: string | number = 2;
 
     const positon = getComputedStyle(this.child).position;
-
-    this.child.style.overflow = "hidden";
     if (positon === "static") this.child.style.position = "relative";
 
     for (let i = 0; i < this.child.childElementCount; i++) {
@@ -56,42 +54,34 @@ export class InkWell {
       top: top,
       left: left,
       color: this.color,
-      diagonal: diagonal,
       zIndex: default_zIndex
     });
   };
 
   createWell(props) {
-    const { top, left, color, diagonal, zIndex } = props;
+    const { top, left, color, zIndex } = props;
     const well = document.createElement("div");
 
-    Object.assign(
-      well.style,
-      {
-        top: `${top}px`,
-        left: `${left}px`,
-        background: color,
-        zIndex: zIndex - 1,
-        width: `${diagonal}px`,
-        height: `${diagonal}px`
-      },
-      {
-        opacity: 0,
-        position: "absolute",
-        borderRadius: "100px",
-        transform: "scale3d(0, 0, 0)"
-      }
-    );
+    Object.assign(well.style, {
+      top: 0,
+      left: 0,
+      opacity: 0,
+      width: "100%",
+      height: "100%",
+      background: color,
+      zIndex: zIndex - 1,
+      position: "absolute"
+    });
 
     const animation = well.animate(
       [
         {
           opacity: 1,
-          transform: "scale(0)"
+          clipPath: `circle(2px at ${left}px ${top}px)`
         },
         {
           opacity: 0,
-          transform: `scale(${diagonal / (diagonal / 4)})`
+          clipPath: `circle(120% at ${left}px ${top}px)`
         }
       ],
       {
